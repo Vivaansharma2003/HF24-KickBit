@@ -12,10 +12,6 @@ client = MongoClient(mongopass)
 db = client['crud']
 col = db['licence_plates']
 
-client = MongoClient()
-db = client.testdb
-images = db.images
-
 def ocr(frame,x1,y1,x2,y2,score):
   # crop license plate
   license_plate_crop = frame[y1 : y2, x1 : x2, :]

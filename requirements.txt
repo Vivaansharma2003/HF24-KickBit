@@ -6,7 +6,7 @@ opencv-python==4.9.0.80
 numpy==1.26.2
 matplotlib==3.8.1
 ultralytics==8.1.3
-roboflow
+roboflow==1.1.26
 flask==3.0.0
 flask_wtf==1.2.1
 pymongo==4.6.3

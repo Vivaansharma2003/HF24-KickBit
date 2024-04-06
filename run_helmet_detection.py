@@ -10,12 +10,7 @@ import io
 
 client = MongoClient(mongopass)
 db = client['crud']
-col = db['licence_plates']
-
-
-client = MongoClient()
-db = client.testdb
-images = db.images
+col = db['helmets']
 
 def ocr(frame,x1,y1,x2,y2,score):
   # crop license plate
@@ -65,8 +60,6 @@ def video_detection(path_x):
 
     if success:
       no_helmet = helmet_model.predict(img, stream=True, conf=0.3)
-
-    
 
       # Coordinates
       for res in no_helmet:
@@ -122,10 +115,9 @@ def video_detection(path_x):
             if cv2.waitKey(1) == ord('q'):
                 break
 
-            else:
-                 break
+    else:
+        break
 
   # Release resources
   cap.release()
   cv2.destroyAllWindows()
-video_detection("C:/ML/festival/helmet.mp4")

@@ -24,6 +24,9 @@ app = Flask(__name__)
 client = MongoClient(mongopass)
 db=client.crud
 myCollection = db.myColl
+collection = db.licence_plates
+helmets = db.helmets
+acc = db.accidents
 
 app.config['SECRET_KEY'] = 'hackathon'
 app.config['UPLOAD_FOLDER'] = 'static/files'
@@ -105,10 +108,10 @@ def insert_val():
 @app.route('/read')
 def read():
     cursor = myCollection.find()
-    for record in cursor:
-        name = record['name']
-        print(record)
-    return render_template('response.html', res=name)
+    '''for record in cursor:
+        name.append(record['name'])
+        print(record)'''
+    return render_template('response.html', res=cursor)
 
 @app.route('/insert')
 def insert():
@@ -135,6 +138,21 @@ def update():
     myCollection.update_one(myquery, newvalues)
     x = "Record updated"
     return render_template('response.html', res=x)
+
+@app.route('/litter')
+def litter():
+    cursor = collection.find()
+    return render_template('litter.html', res=cursor)
+
+@app.route('/helmet')
+def helmet():
+    cursor = helmets.find()
+    return render_template('no_helmet.html', res=cursor)
+
+@app.route('/accidents')
+def accidents():
+    cursor = acc.find()
+    return render_template('road_accidents.html', res=cursor)
 
 if __name__ == "__main__":
     app.run(debug=True)

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Road Accident</title>
+    <style>
+        body {
+         font-family: Arial, sans-serif;
+         margin: 0;
+         padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            background-color: #555; /* Updated background color */
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        .button-container {
+            text-align: center;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s; /* Add transition */
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+
+        .button:active {
+            transform: scale(0.95); /* Add scaling effect on click */
+        }
+
+
+        footer {
+            background-color: #555; /* Updated background color */
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+
+        .slideshow-container {
+            max-width: 60%;
+            height: 500px; /* Adjust the height as needed */
+            overflow: hidden;
+            margin: auto;
+            margin-top: 0px;
+            padding: 10px;
+        }
+
+        .mySlides {
+            width: 100%;
+            display: none;
+        }
+
+        .mySlides img {
+            width: 100%;
+            height: 100%; /* Ensure images fill the container */
+            object-fit: cover; /* Maintain aspect ratio */
+        }
+
+
+        /* for no helmet section */
+
+        .section-container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .section {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            width: calc(33.33% - 20px); /* 33.33% width for each section with spacing */
+            box-sizing: border-box;
+        }
+
+        .section h2 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Road Accident</h1>
+    </header>
+    <div class="container">
+        <div class="section-container">
+            <div class="section">
+                <h2>Serial Number</h2>
+                <p>1</p>
+            </div>
+            <div class="section">
+                <h2>Accident Coordinates</h2>
+                <p>Latitude: 40.7128, Longitude: -74.0060</p>
+            </div>
+            <div class="section">
+                <h2>Time of Accident</h2>
+                <p>2024-04-06 15:30:00</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

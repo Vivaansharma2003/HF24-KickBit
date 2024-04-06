@@ -1,1 +1,17 @@
-{{ res }}
+<!-- {{ res }} -->
+{% for name in res %}
+<div class="container">
+    <div class="section-container">
+        <div class="section">
+            <h2>Registration Number</h2>
+            <p>{{name['name']}}</p>
+        </div>
+        <div class="section">
+            <h2>Vehicle Image</h2>
+            <!-- <img src="vehicle_image.jpg" alt="Vehicle Image"> -->
+            <p>{{name['address']}}</p>
+        </div>
+        <!-- <h3>{{name["name"]}}</h3> -->
+    </div>
+</div>
+{% endfor %}
