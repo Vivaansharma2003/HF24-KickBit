@@ -67,8 +67,8 @@ def video_detection(path_x):
         
 
         for res_box in res_boxes:
-    # Class name
-            no_helmet_class_name = "no_helmet"
+            # Class name
+            no_helmet_class_name = helmet_model.names[int(res_box.cls[0])]
 
             plate_results = plate_model(img, stream=True, conf=0.2)
 
@@ -101,8 +101,8 @@ def video_detection(path_x):
             x1, y1, x2, y2 = res_box.xyxy[0]
             x1, y1, x2, y2 = int(x1), int(y1), int(x2), int(y2)  # Convert to int values
 
-            # Check if the detected object is labeled as 1 (assuming 1 represents number plates)
-            if res_box.cls[0] == 1:
+            # Check if the detected object is labeled as 0 (0 represents number plates)
+            if res_box.cls[0] == 0:
                 # Put box in frame
                 cv2.rectangle(img, (x1, y1), (x2, y2), (255, 0, 255), 3)
 
@@ -110,10 +110,9 @@ def video_detection(path_x):
                 org = [x1, y1]
                 cv2.putText(img, no_helmet_class_name, org, font, fontScale, color, thickness)
 
-
-            cv2.imshow('Webcam', img)
-            if cv2.waitKey(1) == ord('q'):
-                break
+      cv2.imshow('Webcam', img)
+      if cv2.waitKey(1) == ord('q'):
+        break
 
     else:
         break
@@ -121,3 +120,4 @@ def video_detection(path_x):
   # Release resources
   cap.release()
   cv2.destroyAllWindows()
+  
