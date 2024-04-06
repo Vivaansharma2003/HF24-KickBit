@@ -9,6 +9,7 @@ header {
     color: #fff;
     padding: 10px 0;
     text-align: center;
+    background-color: #555; /* Updated background color */
 }
 
 .container {
@@ -22,16 +23,69 @@ header {
 }
 
 .button {
-    display: block; /* Change display property to block */
-    width: 200px; /* Optional: Set button width */
-    margin: 10px auto; /* Center align */
+    display: inline-block;
     padding: 10px 20px;
+    margin: 10px;
     background-color: #007bff;
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s; /* Add transition */
 }
 
 .button:hover {
     background-color: #0056b3;
+}
+
+.button:active {
+    transform: scale(0.95); /* Add scaling effect on click */
+}
+
+
+footer {
+    background-color: #555; /* Updated background color */
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+
+.slideshow-container {
+    max-width: 60%;
+    height: 500px; /* Adjust the height as needed */
+    overflow: hidden;
+    margin: auto;
+    margin-top: 0px;
+    padding: 10px;
+}
+
+.mySlides {
+    width: 100%;
+    display: none;
+}
+
+.mySlides img {
+    width: 100%;
+    height: 100%; /* Ensure images fill the container */
+    object-fit: cover; /* Maintain aspect ratio */
+}
+
+
+/* for no helmet section */
+
+.section-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.section {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    width: calc(33.33% - 20px); /* 33.33% width for each section with spacing */
+    box-sizing: border-box;
+}
+
+.section h2 {
+    margin-top: 0;
 }
