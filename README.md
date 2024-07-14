@@ -1,4 +1,4 @@
-Distributed Vehicle Monitoring System Using Cameras
+**Distributed Vehicle Monitoring System Using Cameras**
 Overview
 This project implements a Distributed Vehicle Monitoring System that leverages cameras mounted on vehicles to monitor and analyze various aspects of driving behavior, vehicle condition, and surrounding environments. The system is designed to enhance safety, provide real-time insights, and facilitate efficient fleet management.
 
